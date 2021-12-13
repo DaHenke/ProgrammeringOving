@@ -1,0 +1,73 @@
+public class Fag{
+    private String fagnavn;
+    private int studieår;
+
+    public Fag(String fagnavn, int studieår){
+        this.fagnavn = fagnavn;
+        this.studieår = studieår;
+    }
+
+    public String getFagnavn(){
+        return this.fagnavn;
+    }
+
+    public void setFagnavn(String fagnavn){
+        this.fagnavn = fagnavn;
+    }
+
+    public int getStudieår(){
+        return this.studieår;
+    }
+
+    public void setStudieår(int studieår){
+        this.studieår = studieår;
+    }
+
+    public String toString(){
+        return "Fag: " + this.getFagnavn() + ", år: " + this.getStudieår();
+    }
+}
+
+public class Student{
+    private String navn;
+    private String studNr;
+
+    public Student(String navn, String studNr){
+        this.navn = navn;
+        this.studNr = studNr;
+    }
+
+    public String getNavn(){
+        return this.navn;
+    }
+
+    public void setNavn(String navn){
+        this.navn = navn;
+    }
+
+    public String getStudNr(){
+        return this.studNr;
+    }
+
+    public void setStudNr(String studNr){
+        this.studNr = studNr;
+    }
+
+    public String toString(){
+        return "Student : Navn=" + this.getNavn() + ", StudNr=" + this.getStudNr();
+    }
+
+}
+
+public class oppgave3{
+
+    Fag fag1 = new Fag("Programmering", 2020);
+
+    Student student1 = new Student("Kari Olsen", "S234556");
+    Student student1 = new Student("Ole Hansen", "S356734");
+
+    System.out.println(fag1.toString());
+    System.out.println(student1.toString());
+    System.out.println(student2.toString());
+
+}

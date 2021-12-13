@@ -1,0 +1,58 @@
+public class Controller{
+
+
+    public static void main(String[] args){
+
+        List<Double> register = new ArrayList<>();
+
+        @FXML
+        private TextField txtTemperatur;
+
+        @FXML
+        private Label lblMin;
+
+        @FXML
+        private Label lblMaks;
+
+        @FXML
+        private Label lblGjennomsnitt;
+
+        @FXML
+        private Label lblFeil;
+
+        @FXML
+        void nullstill(ActionEvent event) {
+            for(int i = register.size()-1 ; i >= 0 ; i--){
+                register.remove(register.get(i));
+            }
+            lblMaks.setText("");
+            lblMin.setText("");
+            lblGjennomsnitt("");
+        }
+
+        @FXML
+        void registrer(ActionEvent event) {
+            try{
+                register.add(Double.parseDouble(txtTemperatur.getText()));
+
+                register.sort(Comparator.naturalOrder());
+
+                lblMin.setText(String.valueOf(register.get(0)));
+                lblMax.setText(String.valueOf(register.get(register.size()-1)));
+                double sum = 0;
+                double teller = 0;
+
+                for(double d : register){
+                    sum += d;
+                    teller++;
+                }
+                lblGjennomsnitt.setText(String.valueOf(sum/teller));
+
+            }catch(Exception e){
+                lblFeil.setText("Ikke riktig verdi skrevet for temperatur");
+            }
+        }
+
+
+    }
+}
